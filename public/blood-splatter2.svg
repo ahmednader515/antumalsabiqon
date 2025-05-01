@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
+    </filter>
+    <linearGradient id="bloodGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#990000" />
+      <stop offset="50%" stop-color="#800000" />
+      <stop offset="100%" stop-color="#600000" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main blood splatter - more chaotic shape -->
+  <path d="M300,100 C380,80 450,120 460,200 C500,250 550,220 570,300 
+           C590,380 500,450 450,460 C400,470 350,500 300,450 
+           C250,400 200,420 180,350 C160,280 220,120 300,100 Z" 
+        fill="url(#bloodGradient)" opacity="0.9" />
+  
+  <!-- Blood drips - longer and more dramatic -->
+  <path d="M350,460 C360,520 370,590 360,650 C355,680 340,685 335,650 C330,590 340,520 350,460 Z" 
+        fill="#880000" opacity="0.85" />
+  <path d="M420,460 C430,540 440,620 430,680 C425,710 410,715 405,680 C400,620 410,540 420,460 Z" 
+        fill="#770000" opacity="0.8" />
+  <path d="M500,400 C510,460 515,520 505,560 C500,580 485,585 480,560 C475,520 490,460 500,400 Z" 
+        fill="#990000" opacity="0.85" />
+  <path d="M250,350 C260,410 265,470 255,510 C250,530 235,535 230,510 C225,470 240,410 250,350 Z" 
+        fill="#880000" opacity="0.8" />
+  
+  <!-- Blood splatters - random smaller drops -->
+  <ellipse cx="200" cy="200" rx="30" ry="25" fill="#990000" opacity="0.7" />
+  <ellipse cx="180" cy="280" rx="15" ry="20" fill="#880000" opacity="0.75" />
+  <ellipse cx="550" cy="180" rx="25" ry="20" fill="#990000" opacity="0.8" />
+  <ellipse cx="600" cy="250" rx="18" ry="22" fill="#880000" opacity="0.7" />
+  <ellipse cx="580" cy="350" rx="12" ry="15" fill="#770000" opacity="0.75" />
+  <ellipse cx="500" cy="150" rx="10" ry="12" fill="#880000" opacity="0.7" />
+  <ellipse cx="250" cy="220" rx="8" ry="10" fill="#990000" opacity="0.8" />
+  <ellipse cx="450" cy="120" rx="15" ry="12" fill="#880000" opacity="0.75" />
+  
+  <!-- Apply blur to edges for a more natural look -->
+  <g filter="url(#blur)">
+    <path d="M300,100 C380,80 450,120 460,200 C500,250 550,220 570,300 
+             C590,380 500,450 450,460 C400,470 350,500 300,450 
+             C250,400 200,420 180,350 C160,280 220,120 300,100 Z" 
+          fill="#990000" opacity="0.1" />
+  </g>
+</svg> 

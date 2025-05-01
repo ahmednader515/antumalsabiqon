@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+    </filter>
+    <linearGradient id="drip-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a00000" />
+      <stop offset="40%" stop-color="#800000" />
+      <stop offset="100%" stop-color="#600000" />
+    </linearGradient>
+    <linearGradient id="drip-gradient-darker" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#800000" />
+      <stop offset="60%" stop-color="#600000" />
+      <stop offset="100%" stop-color="#400000" />
+    </linearGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Main drips with more organic paths -->
+  <path d="M50,0 C52,20 58,40 55,60 C53,80 44,90 48,110 C50,125 42,130 38,115 C35,100 32,85 30,70 C28,50 35,30 40,0 Z" 
+        fill="url(#drip-gradient)" opacity="0.9" filter="url(#dropShadow)" />
+  
+  <path d="M120,0 C126,25 130,50 128,75 C126,90 122,105 125,120 C127,135 118,145 112,140 C105,130 102,115 100,100 C98,70 105,40 110,0 Z" 
+        fill="url(#drip-gradient)" opacity="0.95" filter="url(#dropShadow)" />
+  
+  <path d="M200,0 C207,30 213,60 210,90 C208,120 215,150 208,170 C204,185 190,185 186,170 C182,150 185,125 180,100 C175,70 185,35 190,0 Z" 
+        fill="url(#drip-gradient-darker)" opacity="0.95" filter="url(#dropShadow)" />
+  
+  <path d="M280,0 C285,20 292,40 290,60 C287,80 283,100 286,115 C288,130 275,140 270,130 C265,115 262,95 260,80 C258,50 265,25 270,0 Z" 
+        fill="url(#drip-gradient)" opacity="0.95" filter="url(#dropShadow)" />
+  
+  <path d="M350,0 C354,15 359,30 357,45 C354,60 348,70 351,85 C353,95 340,105 335,95 C331,85 330,70 328,55 C326,35 335,15 340,0 Z" 
+        fill="url(#drip-gradient-darker)" opacity="0.9" filter="url(#dropShadow)" />
+  
+  <!-- Small drips with irregular shapes -->
+  <path d="M80,0 C83,10 84,20 82,30 C81,40 77,45 79,55 C80,65 74,70 71,65 C69,55 68,45 67,35 C66,20 73,10 75,0 Z" 
+        fill="url(#drip-gradient)" opacity="0.85" filter="url(#dropShadow)" />
+  
+  <path d="M160,0 C162,8 165,16 163,24 C162,32 158,38 160,45 C161,52 152,55 150,50 C148,42 147,35 146,28 C145,18 152,9 155,0 Z" 
+        fill="url(#drip-gradient)" opacity="0.8" filter="url(#dropShadow)" />
+  
+  <path d="M240,0 C242,7 246,15 243,22 C241,28 238,34 240,40 C242,48 235,52 231,47 C228,40 227,32 225,25 C224,15 233,8 235,0 Z" 
+        fill="url(#drip-gradient-darker)" opacity="0.85" filter="url(#dropShadow)" />
+  
+  <path d="M320,0 C322,10 326,20 324,30 C322,40 318,47 320,57 C322,67 313,70 309,65 C306,55 305,45 303,35 C301,20 313,10 315,0 Z" 
+        fill="url(#drip-gradient)" opacity="0.8" filter="url(#dropShadow)" />
+  
+  <!-- Drip highlights for glossy look -->
+  <path d="M50,0 C52,20 56,40 54,60 C53,70 49,80 50,90 C48,100 42,105 40,100" 
+        fill="none" stroke="#d00000" stroke-width="1.5" opacity="0.2" />
+  
+  <path d="M120,0 C126,25 130,50 128,75 C126,85 123,95 124,105" 
+        fill="none" stroke="#d00000" stroke-width="1.5" opacity="0.2" />
+  
+  <path d="M200,0 C207,30 212,60 209,90 C208,105 211,120 209,135" 
+        fill="none" stroke="#d00000" stroke-width="1.5" opacity="0.2" />
+  
+  <path d="M280,0 C285,20 290,40 288,60 C286,75 283,90 284,105" 
+        fill="none" stroke="#d00000" stroke-width="1.5" opacity="0.2" />
+  
+  <path d="M350,0 C354,15 358,30 356,45 C354,55 350,65 351,75" 
+        fill="none" stroke="#d00000" stroke-width="1.5" opacity="0.2" />
+  
+  <!-- Droplets at the bottom of some drips -->
+  <ellipse cx="48" cy="115" rx="8" ry="6" fill="url(#drip-gradient)" opacity="0.9" filter="url(#blur)" />
+  <ellipse cx="112" cy="140" rx="10" ry="7" fill="url(#drip-gradient)" opacity="0.9" filter="url(#blur)" />
+  <ellipse cx="186" cy="170" rx="12" ry="9" fill="url(#drip-gradient-darker)" opacity="0.9" filter="url(#blur)" />
+  <ellipse cx="270" cy="130" rx="9" ry="7" fill="url(#drip-gradient)" opacity="0.9" filter="url(#blur)" />
+  <ellipse cx="335" cy="95" rx="8" ry="6" fill="url(#drip-gradient-darker)" opacity="0.9" filter="url(#blur)" />
+  
+  <!-- Blood texture/speckles for realism -->
+  <g opacity="0.1">
+    <circle cx="45" cy="50" r="2" fill="#600000" />
+    <circle cx="58" cy="85" r="1.5" fill="#600000" />
+    <circle cx="125" cy="60" r="2" fill="#600000" />
+    <circle cx="118" cy="110" r="1.5" fill="#600000" />
+    <circle cx="205" cy="80" r="2" fill="#600000" />
+    <circle cx="192" cy="140" r="1.5" fill="#600000" />
+    <circle cx="275" cy="70" r="2" fill="#600000" />
+    <circle cx="288" cy="105" r="1.5" fill="#600000" />
+    <circle cx="345" cy="40" r="2" fill="#600000" />
+    <circle cx="338" cy="75" r="1.5" fill="#600000" />
+  </g>
+</svg> 

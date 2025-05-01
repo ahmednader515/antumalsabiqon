@@ -134,15 +134,15 @@ export function Header() {
           <div className="absolute inset-0 bg-black opacity-90"></div>
           
           <div 
-            className={`fixed inset-y-0 right-0 w-72 bg-black border-l border-[#3d0d10] shadow-xl transition-transform duration-300 ease-in-out transform ${
+            className={`fixed inset-y-0 right-0 w-[80%] sm:w-80 bg-black border-l border-[#3d0d10] shadow-xl transition-transform duration-300 ease-in-out transform ${
               mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             } h-full max-h-[100vh] overflow-auto flex flex-col`}
             onClick={(e) => e.stopPropagation()}
             style={{ isolation: 'isolate', willChange: 'transform' }}
           >
             {/* Sidebar header */}
-            <div className="p-4 flex items-center justify-between border-b border-[#3d0d10] sticky top-0 bg-black z-10">
-              <div className="relative h-8 w-32">
+            <div className="p-4 sm:p-5 flex items-center justify-between border-b border-[#3d0d10] sticky top-0 bg-black z-10">
+              <div className="relative h-8 sm:h-10 w-32 sm:w-36">
                 <Image 
                   src="/logo.png" 
                   alt="انتم السابقون" 
@@ -152,24 +152,25 @@ export function Header() {
                 />
               </div>
               <button 
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-[#2a0707] text-gray-300 hover:text-primary transition-colors"
+                className="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center rounded-full bg-[#2a0707] text-gray-300 hover:text-primary transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
                   toggleMobileMenu(false);
                 }}
                 aria-label="Close menu"
               >
-                <X size={18} />
+                <X size={20} className="sm:hidden" />
+                <X size={22} className="hidden sm:block" />
               </button>
             </div>
             
             {/* Sidebar navigation */}
-            <div className="p-4 flex flex-col space-y-4 flex-grow">
+            <div className="p-4 sm:p-5 flex flex-col space-y-4 sm:space-y-5 flex-grow">
               {navigationLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   href={link.href}
-                  className="py-3 px-4 text-gray-300 hover:text-white hover:bg-[#2a0707] rounded-md transition-colors border-l-2 border-transparent hover:border-[#851212] text-right"
+                  className="py-3 sm:py-4 px-4 sm:px-5 text-lg sm:text-xl text-gray-300 hover:text-white hover:bg-[#2a0707] rounded-md transition-colors border-l-2 border-transparent hover:border-[#851212] text-right"
                   onClick={(e) => handleNavClick(e, link.href)}
                 >
                   {link.name}
@@ -178,9 +179,9 @@ export function Header() {
             </div>
             
             {/* Sidebar footer */}
-            <div className="p-4 border-t border-[#3d0d10] sticky bottom-0 bg-black">
+            <div className="p-4 sm:p-5 border-t border-[#3d0d10] sticky bottom-0 bg-black">
               <Button 
-                className="w-full bg-[#851212] hover:bg-[#a01616] text-white py-6 bloody-btn"
+                className="w-full bg-[#851212] hover:bg-[#a01616] text-white py-6 sm:py-7 text-base sm:text-lg bloody-btn"
                 onClick={() => toggleMobileMenu(false)}
                 asChild
               >
@@ -200,10 +201,10 @@ export function Header() {
       <header className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
         scrolled ? 'backdrop-blur-sm bg-black/90' : 'bg-black'
       } border-b border-[#3d0d10]/60`}>
-        <div className="container mx-auto relative flex h-16 items-center justify-between">
+        <div className="container mx-auto relative flex h-24 md:h-24 lg:h-24 xl:h-20 2xl:h-25 items-center justify-between">
           {/* Logo Area */}
           <div className="flex items-center mr-4">
-            <Link href="/" className="relative h-10 w-40 overflow-hidden hover:opacity-90 transition-opacity">
+            <Link href="/" className="relative h-10 md:h-11 lg:h-11 xl:h-10 2xl:h-14 w-40 md:w-44 lg:w-44 xl:w-40 2xl:w-52 overflow-hidden hover:opacity-90 transition-opacity">
               <Image 
                 src="/logo.png" 
                 alt="انتم السابقون" 
@@ -216,12 +217,12 @@ export function Header() {
           </div>
           
           {/* Main Navigation */}
-          <nav className="hidden md:flex items-center space-x-reverse space-y-0 space-x-8 mx-auto">
+          <nav className="hidden md:flex items-center space-x-reverse space-y-0 space-x-8 md:space-x-8 lg:space-x-8 xl:space-x-8 2xl:space-x-12 mx-auto">
             {navigationLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href}
-                className="text-sm font-medium text-gray-300 hover:text-primary transition-colors mx-3"
+                className="text-base md:text-base lg:text-base xl:text-base 2xl:text-lg font-medium text-gray-300 hover:text-primary transition-colors mx-3 md:mx-3 lg:mx-3 xl:mx-3 2xl:mx-4 py-2 px-1 hover:border-b hover:border-[#851212]"
                 onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.name}
@@ -230,9 +231,9 @@ export function Header() {
           </nav>
           
           {/* Register Button - Full Height */}
-          <div className="hidden md:block h-full">
+          <div className="hidden md:flex items-center h-full">
             <Button 
-              className="h-16 px-6 bg-[#851212] hover:bg-[#a01616] text-white font-medium border-0 rounded-none"
+              className="h-16 lg:h-16 xl:h-16 2xl:h-24 px-6 md:px-6 lg:px-6 xl:px-6 2xl:px-10 bg-[#851212] hover:bg-[#a01616] text-white text-base md:text-base lg:text-base xl:text-base 2xl:text-xl font-medium border-0 rounded-none"
               asChild
             >
               <Link href="https://store.steampowered.com/app/3666640/_/" target="_blank" rel="noopener noreferrer">
@@ -244,7 +245,7 @@ export function Header() {
           {/* Mobile Menu Button - New horror-themed design */}
           <div className="md:hidden flex items-center ml-4">
             <button 
-              className="relative overflow-hidden w-11 h-11 bg-gradient-to-b from-[#400808] to-[#200404] border border-[#5a0d0d] rounded text-gray-200 hover:text-white transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-[#851212] shadow-lg flex items-center justify-center"
+              className="relative overflow-hidden w-12 sm:w-14 h-12 sm:h-14 bg-gradient-to-b from-[#400808] to-[#200404] border border-[#5a0d0d] rounded text-gray-200 hover:text-white transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-[#851212] shadow-lg flex items-center justify-center"
               onClick={() => toggleMobileMenu(true)}
               aria-label="Toggle menu"
             >
@@ -252,7 +253,7 @@ export function Header() {
               <div className="absolute top-0 left-1/2 w-[1px] h-3 bg-red-700 transform -translate-x-1/2 group-hover:h-4 transition-all duration-300 shadow-glow-sm"></div>
               
               {/* Main menu icon with slash styling */}
-              <div className="relative w-6 h-6 flex flex-col justify-center items-center">
+              <div className="relative w-6 sm:w-7 h-6 sm:h-7 flex flex-col justify-center items-center">
                 {/* Diagonal slash effect */}
                 <div className="absolute w-full h-[1.5px] bg-red-600 transform rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-glow-sm"></div>
                 

@@ -17,6 +17,12 @@ const gameMaps = [
     name: 'المستنقع المهجور',
     description: 'تغمره الضباب والمياه الراكدة، حيث يتردد صدى صرخات الماضي. مهمتك هي البحث بين الطين والجذوع الملتوية عن جثث من سبقوك، واستعادة ثلاثة أجهزة ضرورية للنجاة. لكن احذر، فالوحش يراقبك في الظلال، وكل خطوة قد تكون الأخيرة. اجمع الأجهزة، تفادى الخطر، وانجُ قبل أن تصبح أنت التالي! منطقة خارجية واسعة مع مسارات ضيقة وأشجار متعفنة توفر أماكن للاختباء.',
     images: ['swamp.png', 'swamp-2.png', 'swamp-3.png', 'swamp-4.png', 'swamp-5.png']
+  },
+  {
+    id: 'ghosts-city',
+    name: 'مدينة الأشباح',
+    description: 'ضباب كثيف يملأ المكان، أصوات معدنية تتردد في الفراغ، وكل زاوية قد تكون الأخيرة… استكشف مصنعًا متهالكًا محاطًا بالأسلاك الصدئة والخطر الخفي.',
+    images: ['reactor-1.png', 'reactor-2.png', 'reactor-3.png', 'reactor-4.png']
   }
 ]
 
@@ -65,9 +71,17 @@ export function HowToPlaySection() {
         
         {/* Game Maps Section */}
         <div className="mt-20 mb-16">
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {gameMaps.map((map) => (
+            {gameMaps.slice(0, 2).map((map) => (
+              <MapCard 
+                key={map.id}
+                map={map}
+                isVisible={isVisible}
+              />
+            ))}
+          </div>
+          <div className="mt-10">
+            {gameMaps.slice(2).map((map) => (
               <MapCard 
                 key={map.id}
                 map={map}
@@ -200,7 +214,7 @@ function MapCard({ map, isVisible }: MapCardProps) {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
       }`}
     >
-      <div className="relative aspect-video">
+      <div className={`relative ${map.id === 'ghosts-city' ? 'aspect-[32/9]' : 'aspect-video'}`}>
         <div className="absolute inset-0 overflow-hidden">
           {map.images.map((image, index) => (
             <div 

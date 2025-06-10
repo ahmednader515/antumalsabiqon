@@ -60,6 +60,14 @@ const characters = [
     weaknesses: ['لا يري جيدا في الظلام', 'يمكنه استنساخ نفسه مرة واحدة فقط', 'ضعيف في القوة الجسدية'],
     image: 'monster-4.png',
   },
+  {
+    id: 'entity5',
+    name: 'السفاح',
+    type: 'وحش',
+    abilities: ['عندما يغضب يقتل من ضربة واحدة و يكون اسرع', 'لديه رفيق يحدد له مكان البشر', 'قوة الضرب عالية'],
+    weaknesses: ['لا يري جيدا في الظلام', 'بطئ الهجوم', 'بطئ جدا في الحركة'],
+    image: 'monster-5.png',
+  },
 ]
 
 // Type definitions to fix type errors
